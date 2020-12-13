@@ -12,13 +12,13 @@ function App() {
             <main className="py-3">
                 <Container>
                     {/* HOME ROUTE */}
-                    <Route path="/" exact>
-                        <HomeScreen />
-                    </Route>
+                    <Route path="/" component={HomeScreen} exact></Route>
 
                     {/* PRODUCTS ROUTE */}
-                    <Route path="/product/:id">
-                        <ProductScreen />
+                    <Route path="/product/:id" component={ProductScreen}>
+                        {/* <ProductScreen /> 
+                        non posso usare questa notazione, perche' non mi prende l'id
+                        */}
                     </Route>
                 </Container>
             </main>

@@ -43,7 +43,7 @@ function Product({ product }) {
                     />
                 </Card.Text>
 
-                <Card.Text as="h3">&#36; {product.price}</Card.Text>
+                <Card.Text as="h3">&euro; {product.price}</Card.Text>
             </Card.Body>
         </Card>
     );

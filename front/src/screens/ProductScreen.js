@@ -1,14 +1,31 @@
-import React from "react";
-import products from "../products";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button, Card, Col, Image, ListGroup, Row } from "react-bootstrap";
 import Rating from "../components/Rating";
+import axios from "axios";
 
 //!tramite props.match posso identificare l'id del prodotto
-function ProductScreen(props) {
-    //* pagina del singolo prodotto, quindi trovo il prodotto con id uguale a quello dell'url
-    const product = products.find((p) => p._id === props.match.params.id);
+function ProductScreen({ match }) {
+    //! pagina del singolo prodotto, quindi trovo il prodotto con id uguale a quello dell'url (NON SERVE DOPO CHE IMPOSTO BACKEND)
+    // const product = products.find((p) => p._id === props.match.params.id);
     // console.log(typeof props.match.params.id); //string
+
+    const [product, setProduct] = useState({});
+
+    //* -------------useEffect-------------------
+    useEffect(() => {
+        const fetchProduct = async () => {
+            const { data } = await axios.get(
+                `/api/products/${match.params.id}`
+            );
+
+            setProduct(data);
+        };
+
+        fetchProduct();
+    }, []);
+    //* -----------------------------------------
+
     return (
         <>
             <Link to="/">

@@ -12,7 +12,7 @@ function ProductScreen(props) {
     return (
         <>
             <Link to="/">
-                <Button className="rounded my-3" variant="dark">
+                <Button className="rounded btn-sm my-3" variant="dark">
                     Go Back
                 </Button>
             </Link>
@@ -26,7 +26,7 @@ function ProductScreen(props) {
                     />
                 </Col>
 
-                <Col>
+                <Col md={6}>
                     <ListGroup variant="flush">
                         <ListGroup.Item>
                             <h3>{product.name}</h3>
@@ -50,7 +50,7 @@ function ProductScreen(props) {
                     </ListGroup>
                 </Col>
 
-                <Col md={3}>
+                <Col className="mt-3">
                     <Card>
                         <ListGroup variant="flush">
                             <ListGroup.Item>
@@ -72,19 +72,15 @@ function ProductScreen(props) {
                                     </Col>
                                 </Row>
                             </ListGroup.Item>
-
-                            <ListGroup.Item>
-                                <Row>
-                                    <Button
-                                        className="btn-block rounded"
-                                        disabled={product.countInStock === 0}
-                                    >
-                                        add to cart
-                                    </Button>
-                                </Row>
-                            </ListGroup.Item>
                         </ListGroup>
                     </Card>
+                    <Button
+                        variant="warning"
+                        className="btn-block rounded mx-auto mt-3"
+                        disabled={product.countInStock === 0}
+                    >
+                        add to cart
+                    </Button>
                 </Col>
             </Row>
         </>

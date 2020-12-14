@@ -23,7 +23,7 @@ function ProductScreen({ match }) {
         };
 
         fetchProduct();
-    }, []);
+    }, [match]);
     //* -----------------------------------------
 
     return (
@@ -52,7 +52,7 @@ function ProductScreen({ match }) {
                         <ListGroup.Item>
                             <Rating
                                 value={product.rating}
-                                text={`${product.numReviews}reviews`}
+                                text={`${product.numReviews} reviews`}
                             />
                         </ListGroup.Item>
 

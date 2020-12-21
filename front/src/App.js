@@ -17,7 +17,7 @@ function App() {
                     {/* PRODUCTS ROUTE */}
                     <Route path="/product/:id" component={ProductScreen}>
                         {/* <ProductScreen /> 
-                        non posso usare questa notazione, perche' non mi prende l'id
+                        non posso usare questa notazione, perche' non mi prende l'id dall'url
                         */}
                     </Route>
                 </Container>

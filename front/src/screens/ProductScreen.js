@@ -29,9 +29,16 @@ function ProductScreen({ match }) {
     return (
         <>
             <Link to="/">
-                <Button className="rounded btn-sm my-3" variant="dark">
-                    Go Back
-                </Button>
+                <Row>
+                    <Col md={3}>
+                        <Button
+                            className="rounded btn-sm my-3 w-100"
+                            variant="dark"
+                        >
+                            Go Back
+                        </Button>
+                    </Col>
+                </Row>
             </Link>
             <Row>
                 <Col md={6}>

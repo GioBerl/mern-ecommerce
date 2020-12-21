@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
+//? LinkContainer e' essenzialmente come Link, ma mi permette di wrappare i components di bootstrap
 import { LinkContainer } from "react-router-bootstrap";
 
 function Header() {

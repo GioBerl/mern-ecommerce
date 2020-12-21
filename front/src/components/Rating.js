@@ -76,7 +76,7 @@ Rating.defaultProps = {
 
 //!controllo sul tipo di dato con propTypes
 Rating.propTypes = {
-    value: PropTypes.number.isRequired,
+    // value: PropTypes.number.isRequired,
     text: PropTypes.string.isRequired,
     color: PropTypes.string,
 };

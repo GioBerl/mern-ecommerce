@@ -8,7 +8,9 @@
         "start": "node back/server",
         "server": "nodemon back/server",
         "client": "npm start --prefix front",
-        "dev": "concurrently \"npm run server\" \"npm run client\""
+        "dev": "concurrently \"npm run server\" \"npm run client\"",
+        "data:import": "node back/seeder",
+        "data:destroy": "node back/seeder -d"
     },
     "author": "GioBerl",
     "license": "MIT",

@@ -11,7 +11,7 @@ const reviewSchema = mongoose.Schema(
 
 const productSchema = mongoose.Schema(
     {
-        //voglio sapere quale user ha creato il product
+        //voglio sapere quale user ha creato il product (admin)
         user: {
             type: mongoose.Schema.Types.ObjectId,
             required: true,

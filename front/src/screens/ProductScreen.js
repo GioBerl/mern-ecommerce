@@ -33,9 +33,9 @@ function ProductScreen({ match }) {
                     <Col md={3}>
                         <Button
                             className="rounded btn-sm my-3 w-100"
-                            variant="dark"
+                            variant="outline-dark"
                         >
-                            Go Back
+                            <i class="fas fa-arrow-left"></i> Go Back
                         </Button>
                     </Col>
                 </Row>

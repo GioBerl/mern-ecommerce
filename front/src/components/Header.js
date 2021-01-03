@@ -20,7 +20,7 @@ function Header() {
                             {/* CART ROUTE */}
                             <LinkContainer to="/cart">
                                 <Nav.Link>
-                                    <i className="fas fa-shopping-cart"></i>
+                                    <i className="fas fa-shopping-cart mr-2"></i>
                                     Cart
                                 </Nav.Link>
                             </LinkContainer>
@@ -28,7 +28,7 @@ function Header() {
                             {/* LOGIN ROUTE */}
                             <LinkContainer to="/login">
                                 <Nav.Link>
-                                    <i className="fas fa-user"></i>Sign In
+                                    <i className="fas fa-user mr-2"></i>Sign In
                                 </Nav.Link>
                             </LinkContainer>
                         </Nav>

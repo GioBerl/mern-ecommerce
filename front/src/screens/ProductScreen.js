@@ -24,14 +24,16 @@ function ProductScreen({ match, history }) {
     // console.log(typeof props.match.params.id); //string
 
     // const [product, setProduct] = useState({}); con redux non mi serve il locale state
-    const [qty, setQty] = useState(0);
+
+    //qui setto la quantita per la select
+    const [qty, setQty] = useState(1);
     const dispatch = useDispatch();
     const productDetails = useSelector((state) => state.productDetails);
     const { product, loading, error } = productDetails;
 
     //* -------------useEffect-------------------
+    //dispatch dell'action per il singolo prodotto
     useEffect(() => {
-        console.log(match.params.id);
         dispatch(listProductDetails(match.params.id));
     }, [dispatch, match]);
     //* -----------------------------------------

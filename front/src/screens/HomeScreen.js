@@ -22,6 +22,7 @@ function HomeScreen() {
     //! -----------------------------------------
 
     //* -------------useEffect-------------------
+    //faccio il dispatch dell'action per tutti i prodotti
     useEffect(() => {
         dispatch(listProducts());
     }, [dispatch]);

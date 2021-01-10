@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../actions/cartActions";
+import { addToCart, removeFromCart } from "../actions/cartActions";
 import { Link } from "react-router-dom";
 import {
     Col,
@@ -40,7 +40,7 @@ function CartScreen({ match, location, history }) {
     }, [dispatch, productId, qty]);
 
     const removeFromCartHandler = (id) => {
-        console.log("remove");
+        dispatch(removeFromCart(id));
     };
 
     const checkoutHandler = () => {
@@ -129,21 +129,36 @@ function CartScreen({ match, location, history }) {
                                     (acc, item) => acc + item.qty,
                                     0
                                 )}
-                                )
+                                pz)
                             </h2>
                             {cartItems.map((item) => (
-                                <p>
-                                    &euro;{item.price}X{item.qty}
+                                <p className="d-flex justify-content-between">
+                                    <span>
+                                        &euro;{item.price}x{item.qty}
+                                    </span>
+
+                                    <span>
+                                        &euro;
+                                        {Number(item.price * item.qty).toFixed(
+                                            2
+                                        )}
+                                    </span>
                                 </p>
                             ))}
                             <hr />
-                            &euro;
-                            {cartItems
-                                .reduce(
-                                    (acc, item) => acc + item.qty * item.price,
-                                    0
-                                )
-                                .toFixed(2)}
+                            <p className="d-flex justify-content-between">
+                                <span>Total Price</span>
+                                <span>
+                                    &euro;
+                                    {cartItems
+                                        .reduce(
+                                            (acc, item) =>
+                                                acc + item.qty * item.price,
+                                            0
+                                        )
+                                        .toFixed(2)}
+                                </span>
+                            </p>
                         </ListGroup.Item>
                         <ListGroup.Item>
                             <Button

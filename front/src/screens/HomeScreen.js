@@ -10,11 +10,13 @@ import Message from "../components/Message";
 
 function HomeScreen() {
     //* -------------REDUX-------------------
-    //productList e' il nome del reducer assegnato allo store che ritorna un oggetto con tre possibili property: loading products error, quindi lo posso destrutturare
+    const dispatch = useDispatch();
+
+    //productList e' il nome del reducer assegnato allo store che ritorna un oggetto con tre possibili property: loading - products - error, quindi lo posso destrutturare
+    //useSelector() Allows you to extract data from the Redux store state, using a selector function.
     const productList = useSelector((state) => state.productList);
     const { loading, products, error } = productList;
     //posso usare la truthiness di loading per generare lo spinner quando sta caricando i dati
-    const dispatch = useDispatch();
     //* -----------------------------------------
     //! -------------useState-------------------
     // usando redux non mi serve piu uno state 'locale'

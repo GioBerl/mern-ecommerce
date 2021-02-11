@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 const orderSchema = mongoose.Schema(
     {
+        //user che ha comprato il prodotto
         user: {
             type: mongoose.Schema.Types.ObjectId,
             required: true,
@@ -9,6 +10,7 @@ const orderSchema = mongoose.Schema(
         },
         orderItems: [
             {
+                //anche se c' e' ridondanza dei dati (name, image, price del product che e' gia' referenziato) cosi le queries saranno piu' veloci
                 name: { type: String, required: true },
                 qty: { type: Number, required: true },
                 image: { type: String, required: true },

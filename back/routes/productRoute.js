@@ -3,6 +3,7 @@ import express from "express";
 import Product from "../models/productModel.js";
 import asyncHandler from "express-async-handler";
 //! semplice Middleware per gestire le eccezioni all'interno di route express asincrone e passarle ai gestori di errori express.
+//! approfondimento ---> https://zellwk.com/blog/async-await-express/
 
 const router = express.Router();
 
@@ -33,7 +34,7 @@ router.get(
             //dopo aver impostato il nostro custom error handler posso semplicemente sollevare l'errore
             //* viene sollevato quando il formato Object.id e' valido, ma quell'id non esiste
             res.status(404);
-            throw new Error("Product not found");
+            throw new Error("OPS Product not found");
             // {
             //     "message": "Product not found",
             //
